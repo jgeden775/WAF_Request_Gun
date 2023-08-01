@@ -8,7 +8,7 @@ def floodGun():
     print('After, press ESC to stop flooding')
     print('')
 
-    target = libs.URL.urlSet(libs.URL.urlInput(''), 'post', '', libs.URL.headers(), '')
+    target = libs.URL.urlSet(libs.URL.urlInput(''), 'post', '', libs.URL.headers(), '', libs.URL.body())
 
     while True:
         print(f'>> Sending POST request on: {target.url}')

